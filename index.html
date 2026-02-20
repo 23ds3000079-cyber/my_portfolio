@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Data Science Student | 23DS3000079</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            font-size: 2.5em;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.2em;
+            color: #718096;
+        }
+        
+        .roll-number {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+        
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h2 {
+            color: #4a5568;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        
+        .project-links {
+            margin-top: 20px;
+        }
+        
+        .project-links a {
+            display: inline-block;
+            padding: 8px 16px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9em;
+            transition: background 0.3s ease;
+        }
+        
+        .project-links a:hover {
+            background: #764ba2;
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9em;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .email-wrapper {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            font-family: monospace;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+        
+        .footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        .student-id {
+            font-family: monospace;
+            background: #4a5568;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 15px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Data Science Student - 23DS3000079</h1>
+            <p class="subtitle">IIT Madras • BSc Data Science Program</p>
+            <span class="roll-number">Roll No: 23DS3000079</span>
+        </header>
+
+        <section class="section">
+            <h2>About Me</h2>
+            <p>I'm a dedicated Data Science student at IIT Madras with roll number <span class="highlight">23DS3000079</span>. Passionate about leveraging machine learning and data analytics to solve real-world problems. Currently exploring various aspects of data analysis, predictive modeling, and deep learning through the rigorous BSc Data Science program at IIT Madras.</p>
+            <p style="margin-top: 15px;">📊 Student ID: 23DS3000079 | 📍 IIT Madras BS in Data Science</p>
+        </section>
+
+        <section class="section">
+            <h2>Academic Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Customer Churn Prediction</h3>
+                    <p>Built a machine learning model to predict customer churn using ensemble methods. Achieved 89% accuracy on test data. Course: ML Foundations (Student: 23DS3000079)</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Image Classification with CNN</h3>
+                    <p>Implemented a Convolutional Neural Network for image classification using TensorFlow. Achieved 92% accuracy on CIFAR-10 dataset. Project by: 23DS3000079</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Sentiment Analysis Dashboard</h3>
+                    <p>Created an interactive dashboard for real-time sentiment analysis of Twitter data using NLP techniques. Student Project - 23DS3000079</p>
+                    <div class="project-links">
+                        <a href="#" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Skills & Coursework</h2>
+            <div class="skills-list">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">R Programming</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Deep Learning</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Statistics</span>
+                <span class="skill-tag">Probability</span>
+                <span class="skill-tag">Linear Algebra</span>
+                <span class="skill-tag">Calculus</span>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Academic Details</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                    <strong>Program</strong>
+                    <p>BSc Data Science</p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                    <strong>Institution</strong>
+                    <p>IIT Madras</p>
+                </div>
+                <div style="background: white; padding: 20px; border-radius: 10px; text-align: center;">
+                    <strong>Roll Number</strong>
+                    <p class="student-id">23DS3000079</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Contact</h2>
+            <div class="contact-info">
+                <div class="email-wrapper">
+                    <strong>📧 Official Email:</strong> 
+                    <!--email_off-->23ds3000079@ds.study.iitm.ac.in<!--/email_off-->
+                </div>
+                <div>
+                    <strong>📚 Student ID:</strong> 23DS3000079
+                </div>
+                <div>
+                    <strong>💻 GitHub:</strong> <a href="https://github.com/23ds3000079" target="_blank">github.com/23ds3000079</a>
+                </div>
+                <div>
+                    <strong>🔗 LinkedIn:</strong> <a href="https://linkedin.com/in/23ds3000079" target="_blank">linkedin.com/in/23ds3000079</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>© 2024 Student 23DS3000079 | IIT Madras - BSc Data Science Program</p>
+            <p>Portfolio of <span style="font-family: monospace;">23DS3000079</span> | <a href="#" target="_blank">GitHub Repository</a></p>
+            <p style="font-size: 0.8em; margin-top: 10px;">Last updated: February 2024</p>
+        </footer>
+    </div>
+</body>
+</html>
