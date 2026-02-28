@@ -6,6 +6,11 @@ on:
     - cron: '30 9 * * *'
   workflow_dispatch:  # Allows manual triggering
 
+# Add explicit permissions
+permissions:
+  contents: write
+  actions: read
+
 jobs:
   daily-commit:
     runs-on: ubuntu-latest
@@ -13,13 +18,18 @@ jobs:
     steps:
     - name: Checkout repository with 23ds3000079@ds.study.iitm.ac.in
       uses: actions/checkout@v3
-      
+      with:
+        # Use the GitHub token for authentication
+        token: ${{ secrets.GITHUB_TOKEN }}
+        # Fetch all history to ensure we can push
+        fetch-depth: 0
+        
     - name: Configure Git with 23ds3000079@ds.study.iitm.ac.in
       run: |
         git config --global user.name "GitHub Actions Bot"
         git config --global user.email "23ds3000079@ds.study.iitm.ac.in"
-    
-    - name: Create daily update file with 23ds3000079@ds.study.iitm.ac.in
+        
+    - name: Check for changes and create daily update with 23ds3000079@ds.study.iitm.ac.in
       run: |
         # Create or update a daily status file
         echo "Daily repository update - $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> daily-updates.log
@@ -39,8 +49,21 @@ jobs:
         This is an automated update performed as part of DevSync's daily repository maintenance.
         EOF
     
-    - name: Commit changes with 23ds3000079@ds.study.iitm.ac.in
+    - name: Commit and push changes with 23ds3000079@ds.study.iitm.ac.in
       run: |
+        # Check if there are changes to commit
         git add daily-updates.log status.md
+        
+        # Only commit if there are changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+          exit 0
+        fi
+        
         git commit -m "Daily automated update from 23ds3000079@ds.study.iitm.ac.in on $(date -u '+%Y-%m-%d')"
-        git push
+        
+        # Pull latest changes before pushing to avoid conflicts
+        git pull --rebase origin ${{ github.ref }}
+        
+        # Push changes
+        git push origin ${{ github.ref }}
